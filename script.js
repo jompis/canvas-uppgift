@@ -19,7 +19,31 @@ console.log(
 Höjd på canvas: ${canvas.height}`
 );
 
+let punkt1x = canvas.width * 0.05
+let punktY = canvas.height * 0.65
+let punkt2x = canvas.width * 0.7
+
+let bredd = canvas.width * 0.25
+let höjd = canvas.height * 0.3
+
 function drawPicture() {
   // Här skriver du funktionen som ritar bilden
+
+  c.beginPath();
+  c.rect(punkt1x, punktY, bredd, höjd);
+  c.rect(punkt2x, punktY, bredd, höjd);
+  c.stroke();
+
+  c.beginPath();
+
+  c.moveTo(punkt1x, punktY);
+  c.lineTo(bredd/2 + punkt1x, midY/3*2);
+  c.lineTo(punkt1x + bredd, punktY)
+
+  c.moveTo(punkt2x, punktY);
+  c.lineTo(bredd/2 + punkt2x, midY/3*2);
+  c.lineTo(punkt2x + bredd, punktY)
+
+  c.stroke();
 }
 drawPicture();
