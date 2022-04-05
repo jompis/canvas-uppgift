@@ -27,15 +27,13 @@ let bredd = canvas.width * 0.25
 let höjd = canvas.height * 0.3
 
 function drawPicture() {
-  // Här skriver du funktionen som ritar bilden
-
   c.beginPath();
+
+  //Rektanglar:
   c.rect(punkt1x, punktY, bredd, höjd);
   c.rect(punkt2x, punktY, bredd, höjd);
-  c.stroke();
 
-  c.beginPath();
-
+  //Trianglar:
   c.moveTo(punkt1x, punktY);
   c.lineTo(bredd/2 + punkt1x, midY/3*2);
   c.lineTo(punkt1x + bredd, punktY)
@@ -43,6 +41,13 @@ function drawPicture() {
   c.moveTo(punkt2x, punktY);
   c.lineTo(bredd/2 + punkt2x, midY/3*2);
   c.lineTo(punkt2x + bredd, punktY)
+
+  c.stroke();
+
+  //Ellips
+  c.beginPath();
+  c.ellipse(midX, midY + canvas.height * 0.1, canvas.width * 0.05, canvas.height * 0.2, 0, 2, 3 * Math.PI - 2);
+  
 
   c.stroke();
 }
