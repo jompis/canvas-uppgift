@@ -36,19 +36,26 @@ function drawPicture() {
   //Trianglar:
   c.moveTo(punkt1x, punktY);
   c.lineTo(bredd/2 + punkt1x, midY/3*2);
-  c.lineTo(punkt1x + bredd, punktY)
+  c.lineTo(punkt1x + bredd, punktY);
 
   c.moveTo(punkt2x, punktY);
   c.lineTo(bredd/2 + punkt2x, midY/3*2);
-  c.lineTo(punkt2x + bredd, punktY)
+  c.lineTo(punkt2x + bredd, punktY);
 
   c.stroke();
 
   //Ellips
   c.beginPath();
   c.ellipse(midX, midY + canvas.height * 0.1, canvas.width * 0.05, canvas.height * 0.2, 0, 2, 3 * Math.PI - 2);
-  
+  c.fillStyle = "green"
+  c.fill();
+  c.stroke();
 
+  //Trädstam;
+  c.beginPath();
+  c.rect(midX - canvas.width * 0.02, midY + canvas.height * 0.28, canvas.width * 0.04, canvas.height * 0.2);
+  c.fillStyle = "Sienna"
+  c.fill();
   c.stroke();
 }
 drawPicture();
